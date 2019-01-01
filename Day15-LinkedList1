@@ -1,0 +1,97 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+
+
+class Node{
+    
+    Node next;
+    int data;
+    
+    
+    // int getData(){
+    //     return this.data;
+    // }
+    // Node getNext(){
+    //     return this.next;
+    // }
+    
+    // //setter
+    
+    // void setData(int newData){
+    //     this.data = newData;
+    // }
+    
+    // void setNext(Node newNext){
+    //     this.next = newNext;
+    // }
+    
+}
+
+class linkList{
+    
+    Node head;
+    
+    linkList(){
+        head = null;
+    }
+    
+    void insert(int data){
+        
+        Node node = new Node();
+        
+        node.data = data;
+        
+        if(head == null){      //first node
+            
+            head = node;
+            
+        }
+        
+        else{
+            //Node n = head;        Adding node at the start
+            node.next = head;
+            head = node;
+        }
+        
+       // System.out.println(node.data);
+        
+    }
+    
+    public void printList(){
+        Node alpha = head;
+        
+        while(alpha.next != null){
+            System.out.println(alpha.data);
+            alpha = alpha.next;
+        }
+        System.out.println(alpha.data); //printing out the last node of list
+    }
+    
+}
+
+
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		
+		linkList p = new linkList();
+		
+		p.insert(1);
+		p.insert(2);
+		p.insert(3);
+		p.insert(4);
+		p.insert(5);
+		
+		p.printList();
+
+		
+	}
+}
