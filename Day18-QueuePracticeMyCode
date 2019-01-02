@@ -1,0 +1,115 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+
+class Node{             //Create new node for a linklist
+    int data;
+    Node next;
+}
+class linkList{
+    
+    Node head;
+    
+    linkList(){
+        this.head = null;
+    }
+    
+    void insert(int data){
+        Node node  = new Node();
+        node.data = data;
+    
+    
+    //inserting at the end of the list
+    
+       if(head == null){
+        head = node;
+        node.next = null;
+    }
+    
+       else{
+        Node alpha = head;
+        while(alpha.next !=null){
+            alpha =alpha.next;
+            }
+        alpha.next = node;
+        node.next = null;
+        }
+        
+    }
+    
+    int popOpener(){                //removes the first element, not just
+                                    //return it
+        int i= (this.head.data);
+        
+        head = head.next;
+        
+        return i;
+        
+    }
+    
+    void printList(){
+        
+        Node alpha = head;
+        
+        while (alpha.next != null){
+            System.out.print(alpha.data + " ");
+            alpha = alpha.next;
+        }
+        System.out.print(alpha.data + "\n");
+        
+    }
+    
+}
+
+class Queue{
+    
+    //Enqueue
+    
+    linkList l = new linkList();
+    
+    void enqueue(int data){
+        
+        l.insert(data);
+        
+    }
+    
+    //Dequeue
+    
+    void dequeue(){
+        
+        l.popOpener();
+        
+    }
+    
+    void printQueue(){
+        
+        l.printList();
+        
+    }
+    
+}
+
+ class codechef {
+    public static void main(String args[])
+    {
+        
+        Queue q = new Queue();
+        
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+        q.enqueue(4);
+        q.enqueue(5);
+        
+        q.printQueue();
+        
+        q.dequeue();
+        q.dequeue();
+        
+        q.printQueue();
+    }
+}
